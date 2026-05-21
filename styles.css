@@ -25,7 +25,7 @@
     --font-body: 'Inter', sans-serif;
 }
 
-body.light-mode {
+[data-theme="light"] {
     --bg-color: #f8fafc;
     --text-color: #334155;
     --text-muted: #64748b;
@@ -90,7 +90,7 @@ body {
     animation-direction: alternate-reverse;
 }
 
-body.light-mode .blob-bg.blob-2 {
+[data-theme="light"] .blob-bg.blob-2 {
     background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(255,255,255,0) 70%);
 }
 

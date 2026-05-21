@@ -51,21 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         const themeIcon = themeBtn.querySelector('i');
-        const body = document.body;
+        const htmlEl = document.documentElement;
 
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            htmlEl.setAttribute('data-theme', 'light');
+            if(themeIcon) themeIcon.classList.replace('fa-sun', 'fa-moon');
         }
 
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            if (body.classList.contains('light-mode')) {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            if (currentTheme !== 'light') {
+                htmlEl.setAttribute('data-theme', 'light');
+                if(themeIcon) themeIcon.classList.replace('fa-sun', 'fa-moon');
                 localStorage.setItem('theme', 'light');
             } else {
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                htmlEl.removeAttribute('data-theme');
+                if(themeIcon) themeIcon.classList.replace('fa-moon', 'fa-sun');
                 localStorage.setItem('theme', 'dark');
             }
         });
