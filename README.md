@@ -34,11 +34,11 @@ Puisqu'il s'agit d'un projet web basique avec des fichiers statiques, vous pouve
 
 1.  Clonez ce dépôt :
     ```bash
-    git clone https://github.com/La3ziz20/portfolio-.git
+    git clone https://github.com/La3ziz20/Portfolio.git
     ```
 2.  Accédez au dossier :
     ```bash
-    cd portfolio-
+    cd Portfolio
     ```
 3.  Ouvrez le fichier `index.html` dans n'importe quel navigateur moderne, ou utilisez un serveur local (ex: `npx serve .` ou `python -m http.server 8080`).
 
